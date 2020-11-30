@@ -8,36 +8,36 @@ import UserListItem from '../UserListItemComponent';
 import data from '../../mockdata/userlist';
 import './index.scss';
 
-const UserList = props => {
+const UserList = ( { listItem }) => {
 
-    const [list, setList] = useState([]);
+    const [list, setList] = useState(listItem);
 
-    const removeItem = (id) => {
-      console.log(id);
-      const path = `http://localhost:5000/users/`;
-      fetch(`${path}${id}`, {
-        method: 'DELETE'
-      })
-      for(var index in list) {
-        if(list[index].id === id) {
-          list.splice(index, 1)
-          setList([...list]);
-        }
-      }
-    }
+    // const removeItem = (id) => {
+    //   console.log(id);
+    //   const path = `http://localhost:5000/users/`;
+    //   fetch(`${path}${id}`, {
+    //     method: 'DELETE'
+    //   })
+    //   for(var index in list) {
+    //     if(list[index].id === id) {
+    //       list.splice(index, 1)
+    //       setList([...list]);
+    //     }
+    //   }
+    // }
 
-    useEffect(() => {
-      getList();
-    }, [])
+    // useEffect(() => {
+    //   getList();
+    // }, [])
 
-    const getList = async () => {
-      const path = `http://localhost:5000/users`;
-      const response = await fetch(path);
-      const json = await response.json();    
+    // const getList = async () => {
+    //   const path = `http://localhost:5000/users`;
+    //   const response = await fetch(path);
+    //   const json = await response.json();    
       
-      console.log(json);
-      setList(json);
-    }
+    //   console.log(json);
+    //   setList(json);
+    // }
 
     return (
 
@@ -169,7 +169,7 @@ const UserList = props => {
                     {
                       list.map((item, index) => (
                         <UserListItem 
-                            handleOnclick={removeItem}
+                            // handleOnclick={removeItem}
                             key={index}
                             index={index}
                             item={item}    

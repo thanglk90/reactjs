@@ -3,14 +3,19 @@ import {
 	// Link,
 	NavLink
 } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { delUser } from '../../redux/actions';
 
 import './index.scss';
 
 const UserListItem = ( { item, index, handleOnclick }) => {
 
+    const dispatch = useDispatch();
+
     const handleOnclickDelete = (e) => {
       e.preventDefault();
-      handleOnclick(item.id);  
+      dispatch(delUser(item.id));
+      // handleOnclick(item.id);  
     }
 
     return (

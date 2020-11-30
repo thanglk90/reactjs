@@ -3,16 +3,37 @@ import {
 	// Link,
 	NavLink
 } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
 
 import Navbar from '../components/NavbarComponent';
 import Sidebar from '../components/SidebarComponent';
 import UserList from '../components/UserListComponent';
 import Breadcrumb from '../components/BreadcrumbComponent';
+import { listUser } from '../redux/actions';
 
 function changeTilte(title) {
 	document.title = title;
 }
+
 function UserListPage({match}) {
+
+	const dispatch = useDispatch();
+	const list = useSelector(state => state.user.list);
+	console.log(list);
+
+	useEffect(() => {
+		getList();
+	}, [])
+
+	const getList = async () => {
+		const path = `http://localhost:5000/users`;
+		const response = await fetch(path);
+		const json = await response.json();    
+
+		dispatch(listUser(json));
+	}
+
+
 	const [isMenuShow, setMenuShow] = useState(true);
 	changeTilte('User list');
 	
@@ -34,7 +55,7 @@ function UserListPage({match}) {
 				<Breadcrumb />
 
 				{/* UserList */}
-				<UserList />
+				<UserList listItem={list} />
 			</div>
 		</div>
     </div>
