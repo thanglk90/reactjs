@@ -1,0 +1,62 @@
+// info card
+
+.info {
+    
+    &__header {
+        padding: 20px 20px;
+
+        font-size: $font-size-label;
+        color: #fff;
+        font-weight: 300;
+
+        user-select: none;
+    }
+
+    &__body {
+        
+
+        font-size: $font-size-primary;
+        color: #fff;
+        font-weight: 300;
+
+        padding: 0;
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            padding: 15px 20px;
+
+            text-decoration: none;
+            color: #fff;
+
+            position: relative;
+
+            &:hover {
+                text-decoration: underline;
+
+                &::after {
+                    // transform: rotate(135deg);
+                    // transform: translateX(0%);
+                    right: 5%;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 7%;
+
+                border: 2px solid #fff;
+                padding: 2px;
+                border-color: #fff #fff transparent transparent;
+
+                transform: rotate(45deg);
+
+                transition: 0.3s;
+            }
+        }
+    }
+}

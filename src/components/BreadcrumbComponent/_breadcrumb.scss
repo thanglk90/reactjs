@@ -1,0 +1,59 @@
+// breadcrum
+
+.breadcrumb {
+    padding: 15px;
+
+    background-color: rgb(233,236,239);
+        
+    border-radius: $border-radius-medium;
+
+    &__list {
+        list-style: none;
+
+        padding-left: 0;
+
+        &-item {
+            display: inline-block;
+
+            padding: 0 10px;
+
+            position: relative;
+
+            &.active {
+                a {
+                    color: $color-text-gray;
+                    user-select: none;
+                    cursor: text;
+                    text-decoration: none;
+                }
+            }
+    
+            &::after {
+                content: '\002F';
+                position: absolute;
+                top: 0;
+                right: -5px;
+
+                color: $color-text-gray;
+                font-size: 1.8rem;
+            }
+    
+            &.active::after {
+                content: '';
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+
+        text-decoration: none;
+        color: $color-primary;
+
+        font-size: $font-size-label;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

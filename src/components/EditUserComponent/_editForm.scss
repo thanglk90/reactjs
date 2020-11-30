@@ -1,0 +1,89 @@
+// form ADD
+.form-add {    
+    
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    &__header {
+        background-color: $background-color-gray;
+        color: #fff;
+
+        font-size: $font-size-title;
+        font-weight: 600;
+
+        text-align: center;
+
+        padding: 15px;
+
+        text-transform: uppercase;
+    }
+
+    &__group {
+        margin-top: 20px;
+
+        label {
+            font-size: $font-size-label;
+            font-weight: 500;
+    
+            display: block;
+            margin-bottom: 5px;
+            
+        }
+
+        input, select {
+            width: 100%;
+
+            padding: 10px 7px;
+            border: 1px solid $color-input-gray;
+            border-radius: $border-radius-medium;
+
+            color: $color-text-gray;
+
+            font-size: $font-size-primary;
+
+            outline: none;
+
+            &:focus {
+                border-color: $color-primary;
+            }
+
+        }
+
+        select {
+            background-color: transparent;
+        }
+
+        input[type="file"] {
+            padding: 6px 7px;
+            margin-top: 10px;
+        }
+
+    }
+
+    &__working {
+        select {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__uploadImg {
+        font-size: $font-size-primary;
+
+        margin-top: 10px;
+    }
+
+    &__imagePreview {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+
+
+}

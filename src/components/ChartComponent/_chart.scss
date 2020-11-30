@@ -1,0 +1,27 @@
+// chart
+
+.chart {
+    
+    &__header {
+        padding: 20px 20px;
+
+        font-size: $font-size-label;
+ 
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        user-select: none;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+    &__body {
+        
+        padding: 0;
+
+        
+    }
+}
