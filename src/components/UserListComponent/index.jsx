@@ -11,6 +11,7 @@ import './index.scss';
 const UserList = ( { listItem }) => {
 
     const [list, setList] = useState(listItem);
+    // console.log(list);
 
     // const removeItem = (id) => {
     //   console.log(id);

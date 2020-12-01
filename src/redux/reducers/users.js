@@ -7,10 +7,10 @@ const initialState = {
 export default (state = initialState, action) => {
     switch(action.type){
         case LIST_USER:
-            // console.log(action);
+            // console.log(action.payload.list);
             return {
                 ...state,
-                list: [...action.payload.list]
+                list: action.payload.list
             }
         case ADD_USER:
             return state;

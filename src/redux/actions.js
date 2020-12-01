@@ -4,7 +4,7 @@ export const listUser = (list) => {
     return {
         type: LIST_USER,
         payload: {
-            list: [...list]
+            list: list
         }
     }
 }
