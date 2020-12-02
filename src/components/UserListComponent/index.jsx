@@ -27,9 +27,9 @@ const UserList = ( { listItem }) => {
     //   }
     // }
 
-    // useEffect(() => {
-    //   getList();
-    // }, [])
+    useEffect(() => {
+      setList(listItem);
+    }, [listItem])
 
     // const getList = async () => {
     //   const path = `http://localhost:5000/users`;

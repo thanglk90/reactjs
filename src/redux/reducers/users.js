@@ -8,10 +8,13 @@ export default (state = initialState, action) => {
     switch(action.type){
         case LIST_USER:
             // console.log(action.payload.list);
-            return {
-                ...state,
+            // return {
+            //     ...state,
+            //     list: action.payload.list
+            // }
+            return Object.assign({}, state, {                 
                 list: action.payload.list
-            }
+            })
         case ADD_USER:
             return state;
         case EDIT_USER:

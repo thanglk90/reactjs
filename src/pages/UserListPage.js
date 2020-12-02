@@ -18,7 +18,7 @@ function changeTilte(title) {
 function UserListPage() {
 
 	const dispatch = useDispatch();
-	const list = useSelector(state => state.user.list);
+	const list = useSelector(state => state.user.list === [] ? 'arr null' : state.user.list);
 	console.log(list);
 
 	useEffect(() => {
@@ -31,7 +31,7 @@ function UserListPage() {
 
 		getList();
 
-	}, []);
+	}, [dispatch]);
 
 	const [isMenuShow, setMenuShow] = useState(true);
 	changeTilte('User list');
